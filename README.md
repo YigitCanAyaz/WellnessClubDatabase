@@ -1,3 +1,4 @@
 # WellnessClubDatabase
 
-![image](https://user-images.githubusercontent.com/54958108/195374633-76216953-8862-47a6-a974-3c5178d24084.png)
+![image](https://user-images.githubusercontent.com/54958108/195717332-2b65c4ad-50f1-4140-9fb6-8e2e6e7a8593.png)
+
