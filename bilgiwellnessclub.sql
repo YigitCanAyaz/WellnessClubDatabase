@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [BilgiWellnessClub]    Script Date: 14.10.2022 00:45:17 ******/
+/****** Object:  Database [BilgiWellnessClub]    Script Date: 21.10.2022 22:00:42 ******/
 CREATE DATABASE [BilgiWellnessClub]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -82,7 +82,7 @@ ALTER DATABASE [BilgiWellnessClub] SET QUERY_STORE = OFF
 GO
 USE [BilgiWellnessClub]
 GO
-/****** Object:  Table [dbo].[Collaborations]    Script Date: 14.10.2022 00:45:17 ******/
+/****** Object:  Table [dbo].[Collaborations]    Script Date: 21.10.2022 22:00:43 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -98,7 +98,7 @@ CREATE TABLE [dbo].[Collaborations](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Events]    Script Date: 14.10.2022 00:45:17 ******/
+/****** Object:  Table [dbo].[Events]    Script Date: 21.10.2022 22:00:43 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -115,7 +115,7 @@ CREATE TABLE [dbo].[Events](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Galleries]    Script Date: 14.10.2022 00:45:17 ******/
+/****** Object:  Table [dbo].[Galleries]    Script Date: 21.10.2022 22:00:43 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -130,21 +130,7 @@ CREATE TABLE [dbo].[Galleries](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Heights]    Script Date: 14.10.2022 00:45:17 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Heights](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[Meter] [float] NOT NULL,
- CONSTRAINT [PK_Heights] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[OperationClaims]    Script Date: 14.10.2022 00:45:17 ******/
+/****** Object:  Table [dbo].[OperationClaims]    Script Date: 21.10.2022 22:00:43 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -158,7 +144,7 @@ CREATE TABLE [dbo].[OperationClaims](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Recipes]    Script Date: 14.10.2022 00:45:17 ******/
+/****** Object:  Table [dbo].[Recipes]    Script Date: 21.10.2022 22:00:43 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -174,18 +160,22 @@ CREATE TABLE [dbo].[Recipes](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[UserHeights]    Script Date: 14.10.2022 00:45:17 ******/
+/****** Object:  Table [dbo].[UserHeights]    Script Date: 21.10.2022 22:00:43 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[UserHeights](
-	[Id] [int] NOT NULL,
+	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[UserId] [int] NOT NULL,
-	[HeightId] [int] NOT NULL
+	[Meter] [float] NOT NULL,
+ CONSTRAINT [PK_UserHeights] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[UserOperationClaims]    Script Date: 14.10.2022 00:45:17 ******/
+/****** Object:  Table [dbo].[UserOperationClaims]    Script Date: 21.10.2022 22:00:43 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -200,7 +190,7 @@ CREATE TABLE [dbo].[UserOperationClaims](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Users]    Script Date: 14.10.2022 00:45:17 ******/
+/****** Object:  Table [dbo].[Users]    Script Date: 21.10.2022 22:00:43 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -221,39 +211,20 @@ CREATE TABLE [dbo].[Users](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[UserWeights]    Script Date: 14.10.2022 00:45:17 ******/
+/****** Object:  Table [dbo].[UserWeights]    Script Date: 21.10.2022 22:00:43 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[UserWeights](
-	[Id] [int] NOT NULL,
+	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[UserId] [int] NOT NULL,
-	[WeightId] [int] NOT NULL,
+	[Kilogram] [float] NOT NULL,
  CONSTRAINT [PK_UserWeights] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[Weights]    Script Date: 14.10.2022 00:45:17 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Weights](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[Kilogram] [float] NOT NULL,
- CONSTRAINT [PK_Weights] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-ALTER TABLE [dbo].[UserHeights]  WITH CHECK ADD  CONSTRAINT [FK_UserHeights_Heights] FOREIGN KEY([HeightId])
-REFERENCES [dbo].[Heights] ([Id])
-GO
-ALTER TABLE [dbo].[UserHeights] CHECK CONSTRAINT [FK_UserHeights_Heights]
 GO
 ALTER TABLE [dbo].[UserHeights]  WITH CHECK ADD  CONSTRAINT [FK_UserHeights_Users] FOREIGN KEY([UserId])
 REFERENCES [dbo].[Users] ([Id])
@@ -274,11 +245,6 @@ ALTER TABLE [dbo].[UserWeights]  WITH CHECK ADD  CONSTRAINT [FK_UserWeights_User
 REFERENCES [dbo].[Users] ([Id])
 GO
 ALTER TABLE [dbo].[UserWeights] CHECK CONSTRAINT [FK_UserWeights_Users]
-GO
-ALTER TABLE [dbo].[UserWeights]  WITH CHECK ADD  CONSTRAINT [FK_UserWeights_Weights] FOREIGN KEY([WeightId])
-REFERENCES [dbo].[Weights] ([Id])
-GO
-ALTER TABLE [dbo].[UserWeights] CHECK CONSTRAINT [FK_UserWeights_Weights]
 GO
 USE [master]
 GO
