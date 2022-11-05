@@ -1,4 +1,4 @@
-# 🛢 Entity Relationship Diagram of WellnessClub
+# 🛢 Entity Relationship Diagram of WellnessClub (3NF)
 
 This project is the database of the Bilgi University Wellness Club.
 
